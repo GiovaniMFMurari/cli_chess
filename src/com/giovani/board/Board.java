@@ -17,7 +17,7 @@ public class Board {
         return pieces;
     }
 
-    private boolean positionExists(Position position){
+    public boolean positionExists(Position position){
         if (position.getRow() < 0
                 || position.getColumn() < 0
                 || position.getRow() > rows
@@ -35,7 +35,7 @@ public class Board {
         return pieces[position.getRow()][position.getColumn()];
     }
 
-    private boolean hasPiece(Position position) throws BoardException {
+    public boolean hasPiece(Position position) throws BoardException {
         if (piece(position) == null){
             return false;
         }

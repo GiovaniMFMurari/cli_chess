@@ -1,7 +1,10 @@
 package com.giovani.board;
 
 public abstract class Piece {
-    private Position position;
+    protected Position position;
+
+    public Piece(){
+    }
 
     public Piece(Position position){
         this.position = position;
