@@ -1,13 +1,23 @@
-package com.giovani.board;
+package com.murari.giovani.board;
 
 public abstract class Piece {
     protected Position position;
+    protected Board board;
 
     public Piece(){
     }
 
-    public Piece(Position position){
+    public Piece(Position position, Board board){
         this.position = position;
+        this.board = board;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 
     public Position getPosition() {
@@ -18,19 +28,18 @@ public abstract class Piece {
         this.position = position;
     }
 
-    protected abstract boolean[][] possibleMoves();
+    public abstract boolean[][] possibleMoves();
 
-    public boolean possibleMove(Position position){
+    public boolean possibleMove(Position position) {
         return possibleMoves()[position.getRow()][position.getColumn()];
     }
 
-    public boolean isThereAnyPossibleMove(){
+    public boolean isThereAnyPossibleMove() {
         for (int row = 0; row < possibleMoves().length; row++){
             for (int column = 0; column < possibleMoves()[row].length; column++){
                 if (possibleMoves()[row][column] == true){
                     return true;
                 }
-
             }
         }
         return false;

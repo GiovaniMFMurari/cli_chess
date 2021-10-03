@@ -1,16 +1,22 @@
-package com.giovani.board;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.murari.giovani.board;
 
 public class Board {
     private int rows;
     private int columns;
-    private Piece[][] pieces =  new Piece[rows][columns];
+    private Piece[][] pieces;
 
     public Board(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
+        this.pieces =  new Piece[rows][columns];
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
     }
 
     public Piece[][] getPieces() {
@@ -20,8 +26,8 @@ public class Board {
     public boolean positionExists(Position position){
         if (position.getRow() < 0
                 || position.getColumn() < 0
-                || position.getRow() > rows
-                || position.getColumn() > columns
+                || position.getRow() > rows - 1
+                || position.getColumn() > columns - 1
         ){
             return false;
         }

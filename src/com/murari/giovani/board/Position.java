@@ -1,4 +1,4 @@
-package com.giovani.board;
+package com.murari.giovani.board;
 
 public class Position {
     private int row;
@@ -22,5 +22,8 @@ public class Position {
         this.column = column;
     }
 
+    public int sumRowColumn(){
+        return row + column;
+    }
 
 }
